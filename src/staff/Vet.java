@@ -1,11 +1,11 @@
 package staff;
 
 public class Vet extends MedicalStaff {
+	
 
-	public Vet() {
-	} // not sure if i need a default constructor
-
-	public Vet(String name, String staffID, String contactNum, int salary, String medicalLicence) {
+	public Vet() {} ;
+	
+	public Vet(String name, int staffID, String contactNum, int salary, String medicalLicence) {
 		this.name = name;
 		this.staffID = staffID;
 		this.contactNum = contactNum;

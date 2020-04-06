@@ -3,9 +3,10 @@ package staff;
 public abstract class Staff {
 
 	protected String name;
-	protected String staffID;
+	protected int staffID;
 	protected String contactNum;
 	protected int salary;
+	static int counter = 0;
 
 	public String getName() {
 		return name;
@@ -15,11 +16,11 @@ public abstract class Staff {
 		this.name = name;
 	}
 
-	public String getStaffID() {
+	public int getStaffID() {
 		return staffID;
 	}
 
-	public void setStaffID(String staffID) {
+	public void setStaffID(int  staffID) {
 		this.staffID = staffID;
 	}
 

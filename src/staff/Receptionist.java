@@ -1,8 +1,10 @@
 package staff;
 
 public class Receptionist extends AdminStaff {
-
-	public Receptionist(String name, String staffID, String contactNum, int salary, int contractHrs, String dept) {
+	
+	public Receptionist () {};
+	
+	public Receptionist(String name, int staffID, String contactNum, int salary, int contractHrs, String dept) {
 		this.name = name;
 		this.staffID = staffID;
 		this.contactNum = contactNum;
