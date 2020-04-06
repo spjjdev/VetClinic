@@ -3,6 +3,8 @@ package animals;
 public class Cat extends Animal {
 
 	private String licenceNum;
+	
+	public Cat() {};
 
 	public Cat(String name, int age, String owner, String contactNum, String ailment, String licenceNum) {
 		this.name = name;

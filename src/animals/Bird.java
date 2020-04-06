@@ -2,12 +2,28 @@ package animals;
 
 public class Bird extends Animal {
 
-	public Bird(String name, int age, String owner, String contactNum, String ailment) {
+	// when i tried to add a variable 'birdType' i get an error
+	private String birdType;
+
+	public Bird() {
+	};
+
+	public Bird(String name, int age, String owner, String contactNum, String ailment, String birdType) {
 		this.name = name;
 		this.age = age;
 		this.owner = owner;
 		this.contactNum = contactNum;
 		this.ailment = ailment;
+		this.birdType = birdType;
+
+	}
+
+	public String getBirdType() {
+		return birdType;
+	}
+
+	public void setBirdType(String birdType) {
+		this.birdType = birdType;
 	}
 
 	@Override

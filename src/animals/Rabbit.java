@@ -1,6 +1,8 @@
 package animals;
 
 public class Rabbit extends Animal {
+	
+	public Rabbit () {};
 
 	public Rabbit(String name, int age, String owner, String contactNum, String ailment) {
 		this.name = name;
