@@ -20,9 +20,6 @@ public abstract class Staff {
 		return staffID;
 	}
 
-	public void setStaffID(int  staffID) {
-		this.staffID = staffID;
-	}
 
 	public String getContactNum() {
 		return contactNum;

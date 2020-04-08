@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-import animals.Animal; //do i need to import this or if i import each animal by iself will the abstraction reach outside the package
+import animals.Animal; //do i need to import this or if i import each animal by itself will the abstraction reach outside the package
 import animals.Dog;
 import animals.Cat;
 import animals.Bird;
@@ -131,15 +131,16 @@ public class Data {
 
 	public ArrayList<ITstaff> buildITstaff(ArrayList<ITstaff> ITteam) {
 		for (int i = 0; i < 5; i++) {
-			ITteam.add(new ITstaff());
-			ITteam.get(i).setName(firstName[rG.nextInt(firstName.length)]);
-			ITteam.get(i).setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
+			ITstaff s = new ITstaff();
+			s.setName(firstName[rG.nextInt(firstName.length)]);
+			s.setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			// ITteam.get(i).setStaffID();.......need to figure a method to create unique
 			// IDs across building methods of staff
-			ITteam.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
-			ITteam.get(i).setSalary(40000);
-			ITteam.get(i).setContractHrs(30);
-			ITteam.get(i).setDept("I.T. Department");
+			s.setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
+			s.setSalary(40000);
+			s.setContractHrs(30);
+			s.setDept("I.T. Department");
+			ITteam.add(s);
 
 		}
 		return ITteam;
