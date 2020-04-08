@@ -28,8 +28,12 @@ public class TraineeVet extends MedicalStaff {
 
 	@Override
 	public String toString() {
-		return "TraineeVet [university=" + university + ", name=" + name + ", staffID=" + staffID + ", contactNum="
-				+ contactNum + ", salary=" + salary + "]";
+		return "Trainee Vet: "+ name + "\n" 
+		           + "Staff ID: " + staffID  + "\n"
+					+ "Contact Number: " + contactNum + "\n"
+					+ "Salary: " + salary + "\n"
+					+ "Medical Licence: " + medicalLicence +"\n"
+							+ "University: "+ university + "\n"+"\n";
 	}
 
 }

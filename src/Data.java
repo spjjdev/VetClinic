@@ -185,7 +185,7 @@ public class Data {
 			// unique IDs
 			// across building methods of staff
 			traineeVets.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
-			traineeVets.get(i).setSalary(70000);
+			traineeVets.get(i).setSalary(40000);
 			traineeVets.get(i).setMedicalLicence(null);// it is null because they dont have their medical licence yet
 
 		}
@@ -199,10 +199,16 @@ public class Data {
 			// nurses.get(i).setStaffID();.......need to figure a method to create unique IDs
 			// across building methods of staff
 			nurses.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
-			nurses.get(i).setSalary(70000);
+			nurses.get(i).setSalary(40000);
 			nurses.get(i).getMedicalLicence();// need a unique medical licence number the same as staff id
 
 		}
 		return nurses;
 	}
+	
+	
+   
+	
+	
+	
 }

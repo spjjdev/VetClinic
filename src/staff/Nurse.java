@@ -14,8 +14,11 @@ public class Nurse extends MedicalStaff {
 
 	@Override
 	public String toString() {
-		return "Nurse [medicalLicence=" + medicalLicence + ", name=" + name + ", staffID=" + staffID + ", contactNum="
-				+ contactNum + ", salary=" + salary + "]";
+		return "Nurse: "+ name + "\n" 
+		           + "Staff ID: " + staffID  + "\n"
+					+ "Contact Number: " + contactNum + "\n"
+					+ "Salary: " + salary + "\n"
+					+ "Medical Licence: " + medicalLicence + "\n"+"\n";
 	}
 
 	
