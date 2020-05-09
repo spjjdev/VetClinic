@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-
-import animals.Animal; //do i need to import this or if i import each animal by itself will the abstraction reach outside the package
 import animals.Dog;
 import animals.Cat;
 import animals.Bird;
@@ -55,7 +53,8 @@ public class Data {
 			"0192893843", "0918394039", "0909098787", "0980980981", "0192384211", "5746329821", "0192893843",
 			"0918394039", "0909098787" };
 
-	public ArrayList<Dog> buildDog(ArrayList<Dog> dogs) {
+	public ArrayList<Dog> buildDog() {
+		ArrayList<Dog> dogs = new ArrayList<Dog>();
 		for (int i = 0; i < 200; i++) {
 			dogs.add(new Dog());
 			dogs.get(i).setName(dogName[rG.nextInt(dogName.length)]);
@@ -71,7 +70,8 @@ public class Data {
 		return dogs;
 	}
 
-	public ArrayList<Cat> buildCat(ArrayList<Cat> cats) {
+	public ArrayList<Cat> buildCat() {
+		ArrayList<Cat> cats = new ArrayList<Cat>();
 		for (int i = 0; i < 200; i++) {
 			cats.add(new Cat());
 			cats.get(i).setName(catName[rG.nextInt(catName.length)]);
@@ -100,7 +100,8 @@ public class Data {
 		return rabbits;
 	}
 
-	public ArrayList<Hamster> buildHamster(ArrayList<Hamster> hamsters) {
+	public ArrayList<Hamster> buildHamster() {
+		ArrayList<Hamster> hamsters = new ArrayList<Hamster>();
 		for (int i = 0; i < 200; i++) {
 			hamsters.add(new Hamster());
 			hamsters.get(i).setName(hamsterName[rG.nextInt(hamsterName.length)]);
@@ -114,7 +115,8 @@ public class Data {
 		return hamsters;
 	}
 
-	public ArrayList<Bird> buildBird(ArrayList<Bird> birds) {
+	public ArrayList<Bird> buildBird() {
+		ArrayList<Bird> birds = new ArrayList<Bird>();
 		for (int i = 0; i < 200; i++) {
 			birds.add(new Bird());
 			birds.get(i).setName(birdName[rG.nextInt(birdName.length)]);
@@ -129,13 +131,12 @@ public class Data {
 		return birds;
 	}
 
-	public ArrayList<ITstaff> buildITstaff(ArrayList<ITstaff> ITteam) {
+	public ArrayList<ITstaff> buildITstaff() {
+		ArrayList<ITstaff> ITteam = new ArrayList<ITstaff>();
 		for (int i = 0; i < 5; i++) {
 			ITstaff s = new ITstaff();
 			s.setName(firstName[rG.nextInt(firstName.length)]);
 			s.setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// ITteam.get(i).setStaffID();.......need to figure a method to create unique
-			// IDs across building methods of staff
 			s.setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			s.setSalary(40000);
 			s.setContractHrs(30);
@@ -146,7 +147,8 @@ public class Data {
 		return ITteam;
 	}
 
-	public ArrayList<Receptionist> buildReceptionist(ArrayList<Receptionist> receptionists) {
+	public ArrayList<Receptionist> buildReceptionist() {
+		ArrayList<Receptionist> receptionists = new ArrayList<Receptionist>();
 		for (int i = 0; i < 5; i++) {
 			receptionists.add(new Receptionist());
 			receptionists.get(i).setName(firstName[rG.nextInt(firstName.length)]);
@@ -162,7 +164,8 @@ public class Data {
 		return receptionists;
 	}
 
-	public ArrayList<Vet> buildVet(ArrayList<Vet> vets) {
+	public ArrayList<Vet> buildVet() {
+		ArrayList<Vet> vets = new ArrayList<Vet>();
 		for (int i = 0; i < 5; i++) {
 			vets.add(new Vet());
 			vets.get(i).setName(firstName[rG.nextInt(firstName.length)]);
@@ -177,7 +180,8 @@ public class Data {
 		return vets;
 	}
 
-	public ArrayList<TraineeVet> buildTraineeVet(ArrayList<TraineeVet> traineeVets) {
+	public ArrayList<TraineeVet> buildTraineeVet() {
+		ArrayList<TraineeVet> traineeVets = new ArrayList<TraineeVet>();
 		for (int i = 0; i < 5; i++) {
 			traineeVets.add(new TraineeVet());
 			traineeVets.get(i).setName(firstName[rG.nextInt(firstName.length)]);
@@ -192,12 +196,15 @@ public class Data {
 		}
 		return traineeVets;
 	}
-	public ArrayList<Nurse> buildNurse(ArrayList<Nurse> nurses) {
+
+	public ArrayList<Nurse> buildNurse() {
+		ArrayList<Nurse> nurses = new ArrayList<Nurse>();
 		for (int i = 0; i < 5; i++) {
 			nurses.add(new Nurse());
 			nurses.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			nurses.get(i).setName(nurses.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// nurses.get(i).setStaffID();.......need to figure a method to create unique IDs
+			// nurses.get(i).setStaffID();.......need to figure a method to create unique
+			// IDs
 			// across building methods of staff
 			nurses.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			nurses.get(i).setSalary(40000);
@@ -206,10 +213,5 @@ public class Data {
 		}
 		return nurses;
 	}
-	
-	
-   
-	
-	
-	
+
 }
