@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Queue;
 import java.util.Scanner;
 
 import animals.Animal;
@@ -28,7 +31,7 @@ public class Relations {
 	ArrayList<Vet> vets;
 	ArrayList<TraineeVet> traineeVets;
 	ArrayList<Nurse> nurses;
-	ArrayList<Staff> allStaff; // must populate this from all arrays of staff
+//	ArrayList<Staff> allStaff; // must populate this from all arrays of staff
 	ArrayList<Animal> allAnimals; // must populate this from all arrays of animals
 
 	public Relations() {
@@ -54,44 +57,68 @@ public class Relations {
 //	animalQueue.add(dogs);
 //	
 
-	// populate this array from other staff arrays
-	public ArrayList<Staff> listAllStaff(ArrayList<Staff> allStaff) {
+	public ArrayList<Staff> listAllStaff() {
 		ArrayList<Staff> staffList = new ArrayList<Staff>();
-		for (int i = 0; i < allStaff.size(); i++) {
-			System.out.println((i + 1) + ". " + allStaff.get(i).toString());
+		for (Staff s : ITteam) {
+			staffList.add(s);
+		}
+		for (Staff s : traineeVets) {
+			staffList.add(s);
+		}
+		for (Staff s : nurses) {
+			staffList.add(s);
+		}
+		for (Staff s : receptionists) {
+			staffList.add(s);
+		}
+		for (Staff s : vets) {
+			staffList.add(s);
 		}
 		return staffList;
 	}
 
-	public void listStaffByCategory() {
+	public ArrayList<Staff> listStaffByCategory(int staffType) {
+		// receive category as paramter and return corresponding list
+
 		// display each type of staff as a list ie 1.vet 2.nurse etc
 		// user chooses and display arraylist of type of staff
-		System.out.println("1.Vets");
-		System.out.println("2.Trainee Vets");
-		System.out.println("3.Nurses");
-		System.out.println("4.Receptionists");
-		System.out.println("5.IT Staff");
-		int choice = input.nextInt();
 
-		switch (choice) {
+
+		ArrayList<Staff> toReturn = new ArrayList<Staff>();
+
+		switch (staffType) {
 		case 1:
-			for (int i = 0; i < vets.size(); i++) {
-				System.out.println(vets.get(i).getName());
+			for (Staff s : vets) {
+				toReturn.add(s);
 			}
 		case 2:
-			System.out.println(traineeVets);
+			for (Staff s : traineeVets) {
+				toReturn.add(s);
+			}
 		case 3:
-			System.out.println(nurses);
+			for (Staff s : nurses) {
+				toReturn.add(s);
+			}
 		case 4:
-			System.out.println(receptionists);
+			for (Staff s : ITteam) {
+				toReturn.add(s);
+			}
 		case 5:
-			System.out.println(ITteam);
+			for (Staff s : receptionists) {
+				toReturn.add(s);
+			}
 		}
+		return toReturn;
 	}
 
 	public void staffWorkingOnTask() {
+		// tasks as an attribute of staff, ask user for tasks choice and feed to the
+		// method
+		// admin staff(IT staff and receptionists) mapped to tasks? should tasks be an
+		// object? should it be an attribute in admin staff abstraction
 	}
 
+	// how do i ask the user to give me a name
 	public Staff searchStaffByName(String name, ArrayList<Staff> allStaff) {
 		for (int i = 0; i < allStaff.size(); i++) {
 			if (allStaff.get(i).getName() == name) {
@@ -139,6 +166,12 @@ public class Relations {
 		// display list of animal types and choose one displaying that array of animals
 	}
 
+//	public String searchAnimalByName() {
+//		String name = input.next();
+//		for (int i = 0; i < dogs.size(); i++) {
+//			if (dogs.get(i).getName() == name) {
+//				return dogs.get(i).toString();
+//			}
 	public Animal searchAnimalByName(String name, ArrayList<Animal> allAnimals) {
 		for (int i = 0; i < allAnimals.size(); i++) {
 			if (allAnimals.get(i).getName() == name) {
@@ -150,9 +183,12 @@ public class Relations {
 	}
 
 	public void animalsAssignedToStaff() {
+		// map key=vet value=queue animals
 		// the queue of animals in each vets waiting list,
 		// this must be a number of animals from the allAnimals arraylist
-		// map key=vet value=queue animals
+
+		Map<Vet, Queue> vetMap = new HashMap<Vet, Queue>();
+
 	}
 
 	public void waitingListOfAnimalsPerStaff() {
@@ -160,6 +196,7 @@ public class Relations {
 	}
 
 	public void passToNextPet() {
+		// this uses the dequeue method of a queue?
 	}
 
 }

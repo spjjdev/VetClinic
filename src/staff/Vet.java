@@ -7,7 +7,8 @@ public class Vet extends MedicalStaff {
 	
 	public Vet(String name, int staffID, String contactNum, int salary, String medicalLicence) {
 		this.name = name;
-		this.staffID = staffID;
+		this.staffID = counter;
+		counter ++;
 		this.contactNum = contactNum;
 		this.salary = salary;
 		this.medicalLicence = medicalLicence;

@@ -1,9 +1,10 @@
+import java.util.List;
 import java.util.Scanner;
 
-
+import staff.Staff;
 
 public class Menu {
-	
+
 	Relations relations = new Relations();
 
 	Scanner input = new Scanner(System.in);
@@ -25,32 +26,45 @@ public class Menu {
 		int choice = input.nextInt();
 		return choice;
 	}
-	
-	public void display (int choice) {
-		switch(choice) {
-		case 1 : relations.listAllStaff(allStaff);
-		
-		case 2 : relations.listStaffByCategory();
-		
-		case 3 : relations.staffWorkingOnTask();
-		
-		case 4 : relations.searchStaffByName(name, allStaff);
-		
-		case 5 : relations.listAllAnimals(allAnimals);
-		
-		case 6 : relations.listAnimalByType();
-		
-		case 7 : relations.searchAnimalType(name, allAnimals);
-		
-		case 8 : relations.animalsAssignedToStaff();
-		
-		case 9 : relations.waitingListOfAnimalsPerStaff();
-		
-		case 10 : relations.passToNextPet();
-			
-			
-		
+// not calling display method
+	public void display(int choice) {
+		switch (choice) {
+		case 1:
+			List<Staff> staffList = relations.listAllStaff();
+			System.out.println(staffList);
+
+		case 2:
+			System.out.println("Choose a Staff type");
+			System.out.println("1.Vets"+"\n"+"2.Trainee Vets"+"\n"+"3.Nurses"
+			                   +"\n"+"4.IT Staff"+"\n"+"5.Receptionists");
+			int userchoice = input.nextInt();
+			List<Staff> toReturn = relations.listStaffByCategory(userchoice);
+
+		case 3:
+			relations.staffWorkingOnTask();
+
+		case 4:
+			relations.searchStaffByName(name, allStaff);
+
+		case 5:
+			relations.listAllAnimals(allAnimals);
+
+		case 6:
+			relations.listAnimalByType();
+
+		case 7:
+			relations.searchAnimalType(name, allAnimals);
+
+		case 8:
+			relations.animalsAssignedToStaff();
+
+		case 9:
+			relations.waitingListOfAnimalsPerStaff();
+
+		case 10:
+			relations.passToNextPet();
+
 		}
-		
+
 	}
 }

@@ -65,6 +65,7 @@ public class Data {
 			dogs.get(i).setAilment(dogAilment[rG.nextInt(dogAilment.length)]);
 			dogs.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
 			dogs.get(i).setBreed(dogBreed[rG.nextInt(dogBreed.length)]);
+			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
 
 		}
 		return dogs;
@@ -81,6 +82,7 @@ public class Data {
 			cats.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			cats.get(i).setAilment(catAilment[rG.nextInt(catAilment.length)]);
 			cats.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
+			cats.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
 
 		}
 		return cats;
@@ -96,6 +98,7 @@ public class Data {
 			rabbits.get(i).setName(rabbits.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			rabbits.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			rabbits.get(i).setAilment(rabbitAilment[rG.nextInt(rabbitAilment.length)]);
+			rabbits.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
 
 		}
 		return rabbits;
@@ -111,6 +114,7 @@ public class Data {
 			hamsters.get(i).setName(hamsters.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			hamsters.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			hamsters.get(i).setAilment(hamsterAilment[rG.nextInt(hamsterAilment.length)]);
+			hamsters.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
 
 		}
 		return hamsters;
@@ -127,6 +131,7 @@ public class Data {
 			birds.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			birds.get(i).setAilment(birdAilment[rG.nextInt(birdAilment.length)]);
 			birds.get(i).setBirdType(birdtype[rG.nextInt(birdtype.length)]);
+			birds.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
 
 		}
 		return birds;
@@ -136,12 +141,13 @@ public class Data {
 		ArrayList<ITstaff> ITteam = new ArrayList<ITstaff>();
 		for (int i = 0; i < 5; i++) {
 			ITstaff s = new ITstaff();
-			s.setName(firstName[rG.nextInt(firstName.length)]);
-			s.setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
+			s.setName(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
+//			s.setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			s.setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			s.setSalary(40000);
 			s.setContractHrs(30);
 			s.setDept("I.T. Department");
+			s.getStaffID();
 			ITteam.add(s);
 
 		}
@@ -154,12 +160,11 @@ public class Data {
 			receptionists.add(new Receptionist());
 			receptionists.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			receptionists.get(i).setName(receptionists.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// receptionists.get(i).setStaffID();.......need to figure a method to create
-			// unique IDs across building methods of staff
 			receptionists.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			receptionists.get(i).setSalary(30000);
 			receptionists.get(i).setContractHrs(40);
 			receptionists.get(i).setDept("Administration");
+			receptionists.get(i).getStaffID();
 
 		}
 		return receptionists;
@@ -171,11 +176,10 @@ public class Data {
 			vets.add(new Vet());
 			vets.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			vets.get(i).setName(vets.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// vets.get(i).setStaffID();.......need to figure a method to create unique IDs
-			// across building methods of staff
 			vets.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			vets.get(i).setSalary(70000);
 			vets.get(i).getMedicalLicence();// need a unique medical licence number the same as staff id
+			vets.get(i).getStaffID();
 
 		}
 		return vets;
@@ -183,16 +187,14 @@ public class Data {
 
 	public ArrayList<TraineeVet> buildTraineeVet() {
 		ArrayList<TraineeVet> traineeVets = new ArrayList<TraineeVet>();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			traineeVets.add(new TraineeVet());
 			traineeVets.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			traineeVets.get(i).setName(traineeVets.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// trainnevets.get(i).setStaffID();.......need to figure a method to create
-			// unique IDs
-			// across building methods of staff
 			traineeVets.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			traineeVets.get(i).setSalary(40000);
 			traineeVets.get(i).setMedicalLicence(null);// it is null because they dont have their medical licence yet
+			traineeVets.get(i).getStaffID();
 
 		}
 		return traineeVets;
@@ -200,16 +202,14 @@ public class Data {
 
 	public ArrayList<Nurse> buildNurse() {
 		ArrayList<Nurse> nurses = new ArrayList<Nurse>();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 15; i++) {
 			nurses.add(new Nurse());
 			nurses.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			nurses.get(i).setName(nurses.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
-			// nurses.get(i).setStaffID();.......need to figure a method to create unique
-			// IDs
-			// across building methods of staff
 			nurses.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			nurses.get(i).setSalary(40000);
 			nurses.get(i).getMedicalLicence();// need a unique medical licence number the same as staff id
+			nurses.get(i).getStaffID();
 
 		}
 		return nurses;
