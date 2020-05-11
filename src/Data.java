@@ -86,7 +86,8 @@ public class Data {
 		return cats;
 	}
 
-	public ArrayList<Rabbit> buildRabbit(ArrayList<Rabbit> rabbits) {
+	public ArrayList<Rabbit> buildRabbit() {
+		ArrayList<Rabbit> rabbits = new ArrayList<Rabbit>();
 		for (int i = 0; i < 200; i++) {
 			rabbits.add(new Rabbit());
 			rabbits.get(i).setName(rabbitName[rG.nextInt(rabbitName.length)]);
