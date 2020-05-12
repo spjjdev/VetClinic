@@ -14,8 +14,13 @@ public class Hamster extends Animal {
 
 	@Override
 	public String toString() {
-		return "Hamster [name=" + name + ", age=" + age + ", owner=" + owner + ", contactNum=" + contactNum
-				+ ", ailment=" + ailment + "]";
+		
+		return "Hamster, Name: "+ name + "\n"
+				+ "Age: " + age + "\n"
+				+ "Ailment: " + ailment + "\n"
+				+ "Owner: " + owner + "\n"
+				+ "Contact No: " + contactNum + "\n"+ "\n";
+				
 	}
 
 }

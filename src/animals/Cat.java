@@ -25,8 +25,13 @@ public class Cat extends Animal {
 
 	@Override
 	public String toString() {
-		return "Cat [licenceNum=" + licenceNum + ", name=" + name + ", age=" + age + ", owner=" + owner
-				+ ", contactNum=" + contactNum + ", ailment=" + ailment + "]";
+		return "Cat, Name: "+ name + "\n"
+				+ "Age: " + age + "\n"
+				+ "Ailment: " + ailment + "\n"
+				+ "Licence No: " + licenceNum + "\n"
+				+ "Owner: " + owner + "\n"
+				+ "Contact No: " + contactNum + "\n"+ "\n";
+				
 	}
 
 }

@@ -13,4 +13,5 @@ public class Receptionist extends AdminStaff {
 		this.contractHrs = contractHrs;
 		this.dept = dept;
 	}
+	
 }

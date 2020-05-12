@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class Menu {
 
 	public Menu() {
 		readingUser();
+		
 	}
 
 	public void displayOptions() {
@@ -42,16 +44,22 @@ public class Menu {
 			List<Staff> toReturn = relations.listStaffByCategory(userchoice);
 			System.out.println(toReturn);
 		}
-		if (choice == 3) {
-			System.out.println("Choose a task");
-			System.out.println("1.Filing" + "\n" + "2.Making Phone Calls" + "\n" + "3.Updating Patient Database" + "\n"
-					+ "4.Patient Follow-up" + "\n" + "5.Scheduling Appointments");
-			int taskChoice = input.nextInt();
-			List<Staff> tasking = relations.staffWorkingOnTask(taskChoice);
-		}
-//		if (choice == 4) {
-//			relations.searchStaffByName(name, allStaff);
+//		if (choice == 3) {
+//			System.out.println("Choose a task");
+//			System.out.println("1.Filing" + "\n" + "2.Making Phone Calls" + "\n" + "3.Updating Patient Database" + "\n"
+//					+ "4.Patient Follow-up" + "\n" + "5.Scheduling Appointments");
+//			int taskChoice = input.nextInt();
+//			List<Staff> tasking = relations.staffWorkingOnTask(taskChoice);
+//			System.out.println(tasking);
 //		}
+		if (choice == 4) {
+			System.out.println("Enter name of Staff member");
+			String staffName = input.next();
+//			ArrayList <Staff> staff = relations.listAllStaff();
+//			Staff staffMember = relations.searchStaffByName(staffName);
+//			System.out.println(staffMember);
+			
+		}
 		if (choice == 5) {
 			List<Animal> animalList = relations.listAllAnimals();
 			System.out.println(animalList);
@@ -61,22 +69,30 @@ public class Menu {
 			System.out.println("1.Dogs" + "\n" + "2.Cats" + "\n" + "3.Rabbits" + "\n" + "4.Birds" + "\n"
 					+ "5.Hamsters");
 			int userchoice = input.nextInt();
+			System.out.println(userchoice);
 			List<Animal> toReturn = relations.listAnimalByType(userchoice);
 			System.out.println(toReturn);
 		}
 		if (choice == 7) {
-			relations.searchAnimalByName();
+			ArrayList<Animal> array = relations.listAllAnimals();
+			System.out.println(array);
+			System.out.println("Enter name of Animal");
+			String animalName = input.next();
+			Animal animal = relations.searchAnimalByName(animalName,array);
+			
+			System.out.println(animal);
+			
 		}
-		if (choice == 8) {
-			relations.animalsAssignedToStaff();
-		}
+//		if (choice == 8) {
+//			relations.animalsAssignedToStaff();
+//		}
 		if (choice == 9) {
 			relations.waitingListOfAnimalsPerStaff();
 		}
 		if (choice == 10) {
 			relations.passToNextPet();
 		}
-
+       
 	}
 
 //	public int mainMenu()

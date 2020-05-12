@@ -28,7 +28,6 @@ public class Relations {
 	ArrayList<TraineeVet> traineeVets;
 	ArrayList<Nurse> nurses;
 
-
 	public Relations() {
 		dogs = data.buildDog();
 		cats = data.buildCat();
@@ -101,47 +100,44 @@ public class Relations {
 		return toReturn;
 	}
 
-	public ArrayList<Staff> staffWorkingOnTask(int taskChoice) {
-		ArrayList<Staff> tasking = new ArrayList<Staff>();
-		switch (taskChoice) {
-		case 1:
-			// for every staff member whose attribute 'task' equals filing
-			for (Staff s : ITteam) {
-				tasking.add(s);
-			}
-		case 2:
-			for (Staff s : traineeVets) {
-				tasking.add(s);
-			}
-		case 3:
-			for (Staff s : nurses) {
-				tasking.add(s);
-			}
-		case 4:
-			for (Staff s : ITteam) {
-				tasking.add(s);
-			}
-		case 5:
-			for (Staff s : receptionists) {
-				tasking.add(s);
-			}
-		}
-		return tasking;
-		// tasks as an attribute of staff, ask user for tasks choice and feed to the
-		// method
-		// admin staff(IT staff and receptionists) mapped to tasks? should tasks be an
-		// object? should it be an attribute in admin staff abstraction
-	}
+//	public ArrayList<Staff> staffWorkingOnTask(int taskChoice) {
+//			
+//		ArrayList<Staff> tasking = new ArrayList<Staff>();
+//		switch (taskChoice) {
+//		case 1:
+//			// for every staff member whose attribute 'task' equals filing
+//			for (for every staff member of ITteam and Receptionists whose task equals "Filing") {
+//				tasking.add(s);
+//			}
+//		case 2:
+//			for ("Updating Patient Database") {
+//				tasking.add(s);
+//			}
+//		case 3:
+//			for ("Patient Follow-up") {
+//				tasking.add(s);
+//			}
+//		case 4:
+//			for ("Scheduling Appointments") {
+//				tasking.add(s);
+//			}
+//		
+//		}
+//		return tasking;
+//		
+//	}
 
 	// how do i ask the user to give me a name
-	public Staff searchStaffByName(String name) {
-		ArrayList<Staff> allStaff = new ArrayList<Staff>();
-		for (int i = 0; i < allStaff.size(); i++) {
-			if (allStaff.get(i).getName() == name) {
-				return allStaff.get(i);
+	public ArrayList<Staff> searchStaffByName(String name) {
+		ArrayList<Staff> staff = listAllStaff();
+		ArrayList<Staff> toReturn = new ArrayList<Staff>();
+		// arraylist of staff with same name
+		for (int i = 0; i < staff.size(); i++) {
+			if (staff.get(i).getName().contains(name)) {
+				toReturn.add(staff.get(i));
 			}
 		}
-		return null;
+		return toReturn;
 	}
 
 	public ArrayList<Animal> listAllAnimals() {
@@ -169,69 +165,64 @@ public class Relations {
 
 		switch (userChoice) {
 		case 1:
+			System.out.println("one");
 			for (Animal a : dogs) {
 				toReturn.add(a);
+
 			}
+			break;
 		case 2:
+			System.out.println("two");
 			for (Animal a : cats) {
 				toReturn.add(a);
 			}
+			break;
 		case 3:
 			for (Animal a : rabbits) {
 				toReturn.add(a);
 			}
+			break;
 		case 4:
 			for (Animal a : birds) {
 				toReturn.add(a);
 			}
+			break;
 		case 5:
 			for (Animal a : hamsters) {
 				toReturn.add(a);
 			}
+			break;
+
+		}
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return toReturn;
-
-//		System.out.println("1.Dogs");
-//		System.out.println("2.Cats");
-//		System.out.println("3.Rabbits");
-//		System.out.println("4.Hamsters");
-//		System.out.println("5.Birds");
-//		int choice = input.nextInt();
-//
-//		switch (choice) {
-//		case 1:
-//			System.out.println(dogs);
-//		case 2:
-//			System.out.println(cats);
-//		case 3:
-//			System.out.println(rabbits);
-//		case 4:
-//			System.out.println(hamsters);
-//		case 5:
-//			System.out.println(birds);
-//		}
-
 	}
 
-	public Animal searchAnimalByName(String name) {
-		ArrayList<Animal> allAnimals = new ArrayList <Animal>();
-		for (int i = 0; i < allAnimals.size(); i++) {
-			if (allAnimals.get(i).getName() == name) {
-				return allAnimals.get(i);
+	public Animal searchAnimalByName(String name, ArrayList<Animal> animals) {
+
+		for (int i = 0; i < animals.size(); i++) {
+			if (animals.get(i).getName() == name) {
+				return animals.get(i);
 			}
 		}
 		return null;
 
 	}
 
-	public void animalsAssignedToStaff() {
-		// map key=vet value=queue animals
-		// the queue of animals in each vets waiting list,
-		// this must be a number of animals from the allAnimals arraylist
-
-//		Map<Vet, Queue> vetMap = new HashMap<Vet, Queue>();
-
-	}
+//	public ArrayList<Animal> animalsAssignedToStaff(Vet vet) {
+//		//can return a queue or arraylist
+//		// map key=vet value=queue animals
+//		// the queue of animals in each vets waiting list,
+//		// this must be a number of animals from the allAnimals arraylist
+//
+////		Map<Vet, Queue> vetMap = new HashMap<Vet, Queue>();
+//
+//	}
 
 	public void waitingListOfAnimalsPerStaff() {
 		// what is the difference in this and the one before

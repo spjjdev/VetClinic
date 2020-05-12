@@ -14,8 +14,14 @@ public class Rabbit extends Animal {
 
 	@Override
 	public String toString() {
-		return "Rabbit [name=" + name + ", age=" + age + ", owner=" + owner + ", contactNum=" + contactNum
-				+ ", ailment=" + ailment + "]";
+
+		return "Rabbit, Name: "+ name + "\n"
+				+ "Age: " + age + "\n"
+				+ "Ailment: " + ailment + "\n"
+				+ "Owner: " + owner + "\n"
+				+ "Contact No: " + contactNum + "\n"+ "\n";
+				
+				
 	}
 
 }

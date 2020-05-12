@@ -4,8 +4,9 @@ public class Dog extends Animal {
 
 	private String licenceNum;
 	private String breed;
-	
-	public Dog() {};
+
+	public Dog() {
+	};
 
 	public Dog(String name, int age, String owner, String contactNum, String ailment, String licenceNum, String breed) {
 		this.name = name;
@@ -35,10 +36,14 @@ public class Dog extends Animal {
 
 	@Override
 	public String toString() {
-		return "Dog [licenceNum=" + licenceNum + ", breed=" + breed + ", name=" + name + ", age=" + age + ", owner="
-				+ owner + ", contactNum=" + contactNum + ", ailment=" + ailment + "]";
-	}
-
+return "Dog, Name: "+ name + "\n"
+	+ "Breed: " + breed + "\n"
+	+ "Age: " + age + "\n"
+	+ "Ailment: " + ailment + "\n"
+	+ "Licence No: " + licenceNum + "\n"
+	+ "Owner: " + owner + "\n"
+	+ "Contact No: " + contactNum + "\n"+ "\n";
 	
+	}
 
 }

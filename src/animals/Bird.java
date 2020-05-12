@@ -28,7 +28,12 @@ public class Bird extends Animal {
 
 	@Override
 	public String toString() {
-		return "Bird [name=" + name + ", age=" + age + ", owner=" + owner + ", contactNum=" + contactNum + ", ailment="
-				+ ailment + "]";
+		return "Bird, Name: "+ name + "\n"
+				+ "Age: " + age + "\n"
+				+ "Species: " + birdType + "\n"
+				+ "Ailment: " + ailment + "\n"
+				+ "Owner: " + owner + "\n"
+				+ "Contact No: " + contactNum + "\n"+ "\n";
+				
 	}
 }

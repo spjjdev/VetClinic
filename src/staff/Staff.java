@@ -6,7 +6,7 @@ public abstract class Staff {
 	protected int staffID;
 	protected String contactNum;
 	protected int salary;
-	static int counter = 0;
+	static int counter = 0001;
 
 	public String getName() {
 		return name;
@@ -42,8 +42,13 @@ public abstract class Staff {
 	// of staff regardless of role
 	@Override
 	public String toString() {
-		return "Staff [name=" + name + ", staffID=" + staffID + ", contactNum=" + contactNum + ", salary=" + salary
-				+ "]";
+		return "Staff, Name: "+ name + "\n" 
+		           + "Staff ID: " + staffID  + "\n"
+					+ "Contact Number: " + contactNum + "\n"
+					+ "Salary: " + salary + "\n"+"\n";	
+				
+				
+				
 	}
 
 }
