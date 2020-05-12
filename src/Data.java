@@ -43,8 +43,8 @@ public class Data {
 			"Respiratory Infection" };
 	String[] rabbitAilment = { "Ivy poisoning", "Head tilt", "Loss of appetite", "Myxomatosis", "RVHD2",
 			"Ear Infection" };
-	// i want to randomly generate these in a method randomly assigns and feeds to
-	// the setter methods in Animal class
+	String[] tasks = {"Filing","Making Phone Calls","Updating Patient Database","Patient Follow-up","Scheduling Appointments"};
+	
 	int[] animalAge = { 1, 2, 3, 4, 5, 6, 7, 8 };
 	String[] phoneNum = { "0980980981", "0192384211", "5746329821", "0192893843", "0192384211", "5746329821",
 			"0192893843", "0918394039", "0909098787", "0980980981", "0192384211", "5746329821", "0192893843",
@@ -148,6 +148,7 @@ public class Data {
 			s.setContractHrs(30);
 			s.setDept("I.T. Department");
 			s.getStaffID();
+			s.setTask(tasks[rG.nextInt(tasks.length)]);
 			ITteam.add(s);
 
 		}
@@ -165,6 +166,7 @@ public class Data {
 			receptionists.get(i).setContractHrs(40);
 			receptionists.get(i).setDept("Administration");
 			receptionists.get(i).getStaffID();
+			receptionists.get(i).setTask(tasks[rG.nextInt(tasks.length)]);
 
 		}
 		return receptionists;
