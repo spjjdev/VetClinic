@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
 
 import animals.Animal;
@@ -16,8 +17,22 @@ public class Menu {
 			"Pass to the next pet" };
 
 	public Menu() {
+		 displayOptions();
 		readingUser();
-
+//		int option = -1;
+//		do {
+//			    do {
+//			   displayOptions();
+//			    option = readingUser();
+//			    
+//			}while (!vaildOption(option));
+//			    
+//			    if(option !=0) {}
+//			  
+//		
+//			
+//			
+//		} while (option != 0);
 	}
 
 	public void displayOptions() {
@@ -29,7 +44,7 @@ public class Menu {
 
 	public void readingUser() {
 
-		displayOptions();
+//		displayOptions();
 		int choice = input.nextInt();
 
 		if (choice == 1) {
@@ -79,9 +94,12 @@ public class Menu {
 			System.out.println(namedAnimal);
 
 		}
-//		if (choice == 8) {
-//			relations.animalsAssignedToStaff();
-//		}
+		if (choice == 8) {
+			System.out.println("1.Vet 1" + "\n" + "2.Vet 2" + "\n" + "3.Vet 3" + "\n" + "4.Vet 4" + "\n" + "5.Vet 5");
+			int userChoice = input.nextInt();
+			Queue<Animal> queued = relations.animalsAssignedToStaff(userChoice);
+			System.out.println(queued);
+		}
 		if (choice == 9) {
 			relations.waitingListOfAnimalsPerStaff();
 		}
@@ -90,63 +108,10 @@ public class Menu {
 		}
 
 	}
+  
+	public boolean validOption(int option) {
+		return option >= 0 && option <= 10;
+	}
+	
 
-//	public int mainMenu()
-//
-//	{
-//		System.out.println("1. List all Staff");
-//		System.out.println("2. List staff by category");
-//		System.out.println("3. List all Admin staff performing a certain task");
-//		System.out.println("4. Search for staff member by name ");
-//		System.out.println("5. List all animals");
-//		System.out.println("6. List animals by type");
-//		System.out.println("7. Search animal by name");
-//		System.out.println("8. List animals assigned to member of medical staff");
-//		System.out.println("9. List waiting list for medical staff member");
-//		System.out.println("10. Pass to the next pet");
-//
-//		int choice = input.nextInt();
-//		return choice;
-//	}
-//// not calling display method
-//	public void display(int choice) {
-//		switch (choice) {
-//		case 1:
-//			List<Staff> staffList = relations.listAllStaff();
-//			System.out.println(staffList);
-//
-//		case 2:
-//			System.out.println("Choose a Staff type");
-//			System.out.println("1.Vets"+"\n"+"2.Trainee Vets"+"\n"+"3.Nurses"
-//			                   +"\n"+"4.IT Staff"+"\n"+"5.Receptionists");
-//			int userchoice = input.nextInt();
-//			List<Staff> toReturn = relations.listStaffByCategory(userchoice);
-//
-//		case 3:
-//			relations.staffWorkingOnTask();
-//
-//		case 4:
-//			relations.searchStaffByName();
-//
-//		case 5:
-//			relations.listAllAnimals(allAnimals);
-//
-//		case 6:
-//			relations.listAnimalByType();
-//
-//		case 7:
-//			relations.searchAnimalType(name, allAnimals);
-//
-//		case 8:
-//			relations.animalsAssignedToStaff();
-//
-//		case 9:
-//			relations.waitingListOfAnimalsPerStaff();
-//
-//		case 10:
-//			relations.passToNextPet();
-//
-//		}
-//
-//	}
 }

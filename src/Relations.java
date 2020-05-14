@@ -268,7 +268,7 @@ public class Relations {
 		switch (userChoice) {
 		case 1:
 			vetQ.get(vets.get(0));
-			toReturn.
+			
 			
 			break;
 		case 2:

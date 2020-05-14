@@ -6,7 +6,7 @@ public abstract class Staff {
 	protected int staffID;
 	protected String contactNum;
 	protected int salary;
-	static int counter = 0001;
+	static int counter = 1001;
 	protected String task;
 
 	public String getTask() {

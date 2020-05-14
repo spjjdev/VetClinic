@@ -13,7 +13,7 @@ public class TraineeVet extends MedicalStaff {
 	public TraineeVet(String name, int staffID, String contactNum, int salary, String university) {
 		this.name = name;
 		this.staffID = counter;
-		counter ++;
+		counter++;
 		this.contactNum = contactNum;
 		this.salary = salary;
 		this.university = university;
