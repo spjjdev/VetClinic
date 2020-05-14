@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
 import java.util.Scanner;
 import animals.Animal;
 import animals.Bird;
@@ -39,6 +43,34 @@ public class Relations {
 		vets = data.buildVet();
 		traineeVets = data.buildTraineeVet();
 		nurses = data.buildNurse();
+		
+		Queue<Animal> dogsQ = new LinkedList<Animal>();
+		for (Animal d : dogs) {
+			dogsQ.add(d);
+		}
+		Queue<Animal> catsQ = new LinkedList<Animal>();
+		for (Animal c : cats) {
+			catsQ.add(c);
+		}
+		Queue<Animal> birdsQ = new LinkedList<Animal>();
+		for (Animal b : birds) {
+			birdsQ.add(b);
+		}
+		Queue<Animal> rabbitsQ = new LinkedList<Animal>();
+		for (Animal r : rabbits) {
+			rabbitsQ.add(r);
+		}
+		Queue<Animal> hamstersQ = new LinkedList<Animal>();
+		for (Animal h : hamsters) {
+			hamstersQ.add(h);
+		}
+		
+		Map<Vet, Queue<Animal>> vetQ = new HashMap<Vet,Queue<Animal>>();
+		vetQ.put(vets.get(0), dogsQ);
+		vetQ.put(vets.get(1), catsQ);
+		vetQ.put(vets.get(2), birdsQ);
+		vetQ.put(vets.get(3), hamstersQ);
+		vetQ.put(vets.get(4), rabbitsQ);
 	}
 
 //	ArrayList<Animal> animals = new ArrayList<Animal>();
@@ -80,54 +112,75 @@ public class Relations {
 			for (Staff s : vets) {
 				toReturn.add(s);
 			}
+			break;
 		case 2:
 			for (Staff s : traineeVets) {
 				toReturn.add(s);
 			}
+			break;
 		case 3:
 			for (Staff s : nurses) {
 				toReturn.add(s);
 			}
+			break;
 		case 4:
 			for (Staff s : ITteam) {
 				toReturn.add(s);
 			}
+			break;
 		case 5:
 			for (Staff s : receptionists) {
 				toReturn.add(s);
 			}
+			break;
 		}
 		return toReturn;
 	}
 
-//	public ArrayList<Staff> staffWorkingOnTask(int taskChoice) {
-//			
-//		ArrayList<Staff> tasking = new ArrayList<Staff>();
-//		switch (taskChoice) {
-//		case 1:
-//			// for every staff member whose attribute 'task' equals filing
-//			for (for every staff member of ITteam and Receptionists whose task equals "Filing") {
-//				tasking.add(s);
-//			}
-//		case 2:
-//			for ("Updating Patient Database") {
-//				tasking.add(s);
-//			}
-//		case 3:
-//			for ("Patient Follow-up") {
-//				tasking.add(s);
-//			}
-//		case 4:
-//			for ("Scheduling Appointments") {
-//				tasking.add(s);
-//			}
-//		
-//		}
-//		return tasking;
-//		
-//	}
+	public ArrayList<Staff> staffWorkingOnTask(int taskChoice) {
+		ArrayList<Staff> staff = listAllStaff();
+		ArrayList<Staff> tasking = new ArrayList<Staff>();
+		switch (taskChoice) {
+		case 1:
+			for (int i = 0; i < staff.size(); i++) {
+				if (staff.get(i).getTask().contains("Filing")) {
+					tasking.add(staff.get(i));
+				}
+			}
+			break;
+		case 2:
+			for (int i = 0; i < staff.size(); i++) {
+				if (staff.get(i).getTask().contains("Making Phone Calls")) {
+					tasking.add(staff.get(i));
+				}
+			}
+			break;
+		case 3:
+			for (int i = 0; i < staff.size(); i++) {
+				if (staff.get(i).getTask().contains("Updating Patient Database")) {
+					tasking.add(staff.get(i));
+				}
+			}
+			break;
+		case 4:
+			for (int i = 0; i < staff.size(); i++) {
+				if (staff.get(i).getTask().contains("Patient Follow-up")) {
+					tasking.add(staff.get(i));
+				}
+			}
+			break;
+		case 5:
+			for (int i = 0; i < staff.size(); i++) {
+				if (staff.get(i).getTask().contains("Scheduling Appointments")) {
+					tasking.add(staff.get(i));
+				}
+			}
+			break;
+		}
+		return tasking;
 
-	// how do i ask the user to give me a name
+	}
+
 	public ArrayList<Staff> searchStaffByName(String name) {
 		ArrayList<Staff> staff = listAllStaff();
 		ArrayList<Staff> toReturn = new ArrayList<Staff>();
@@ -194,35 +247,55 @@ public class Relations {
 			break;
 
 		}
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+		return toReturn;
+	}
+
+	public ArrayList<Animal> searchAnimalByName(String name) {
+		ArrayList<Animal> animals = listAllAnimals();
+		ArrayList<Animal> toReturn = new ArrayList<Animal>();
+
+		for (int i = 0; i < animals.size(); i++) {
+			if (animals.get(i).getName().contains(name)) {
+				toReturn.add(animals.get(i));
+			}
 		}
 		return toReturn;
 	}
 
-	public Animal searchAnimalByName(String name, ArrayList<Animal> animals) {
-
-		for (int i = 0; i < animals.size(); i++) {
-			if (animals.get(i).getName() == name) {
-				return animals.get(i);
-			}
+	public Queue<Animal> animalsAssignedToStaff(int userChoice) {
+		Queue<Animal> toReturn = new LinkedList<Animal>();
+		switch (userChoice) {
+		case 1:
+			vetQ.get(vets.get(0));
+			toReturn.
+			
+			break;
+		case 2:
+			vetQ.get(vets.get(1));
+			
+			break;
+		case 3:
+			vetQ.get(vets.get(2));
+			
+			break;
+		case 4:
+			vetQ.get(vets.get(3));
+			
+			break;
+		case 5:
+			vetQ.get(vets.get(4));
+			
+			break;
 		}
-		return null;
+		return toReturn;
+		
+		
+		
+		
 
+		return toReturn;
 	}
-
-//	public ArrayList<Animal> animalsAssignedToStaff(Vet vet) {
-//		//can return a queue or arraylist
-//		// map key=vet value=queue animals
-//		// the queue of animals in each vets waiting list,
-//		// this must be a number of animals from the allAnimals arraylist
-//
-////		Map<Vet, Queue> vetMap = new HashMap<Vet, Queue>();
-//
-//	}
 
 	public void waitingListOfAnimalsPerStaff() {
 		// what is the difference in this and the one before

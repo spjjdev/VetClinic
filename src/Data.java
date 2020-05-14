@@ -65,7 +65,7 @@ public class Data {
 			dogs.get(i).setAilment(dogAilment[rG.nextInt(dogAilment.length)]);
 			dogs.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
 			dogs.get(i).setBreed(dogBreed[rG.nextInt(dogBreed.length)]);
-			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)]);
+			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return dogs;
