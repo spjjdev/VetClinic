@@ -18,7 +18,7 @@ public class ITstaff extends AdminStaff {
 	@Override
 	public String toString() {
 		return "Name: " + name + "\n" + "Department: " + dept + "\n" + "Staff ID: " + staffID + "\n"
-				+ "Contract hours: " + contractHrs + "\n" + "Contact Number: " + contactNum + "\n" + "Task: " + task
-				+ "\n" + "Salary: " + salary + "\n" + "\n";
+				+ "Contract hours: " + contractHrs + "\n" + "Contact Number: " + contactNum + "\n" + "Salary: " + salary
+				+ "\n" + "\n";
 	}
 }

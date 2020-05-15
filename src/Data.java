@@ -191,7 +191,7 @@ public class Data {
 			traineeVets.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			traineeVets.get(i).setSalary(40000);
 			traineeVets.get(i).setUniversity(university[rG.nextInt(university.length)]);
-			traineeVets.get(i).setMedicalLicence(null);// it is null because they dont have their medical licence yet
+			traineeVets.get(i).setMedicalLicence("N/A");
 			traineeVets.get(i).getStaffID();
 
 		}

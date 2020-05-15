@@ -14,16 +14,16 @@ public class Menu {
 	String[] menuItems = { "List all Staff", "List staff by category", "List all Admin staff performing a certain task",
 			"Search for staff member by name", "List all animals", "List animals by type", "Search animal by name",
 			"List animals assigned to member of medical staff", "List waiting list for medical staff member",
-			"Pass to the next pet" ,"Exit Vet Clinic"};
+			"Pass to the next pet", "Exit Vet Clinic" };
 
 	public Menu() {
-	
+
 		readingUser();
 
 	}
 
 	public void displayOptions() {
-		System.out.println("Select from the following:");
+		System.out.println("Welcome to Paw-sible Pet Care" + "\n" + "Select from the following:");
 		for (int i = 0; i < menuItems.length; i++) {
 			System.out.println("Press " + (i + 1) + " to " + menuItems[i]);
 		}
@@ -37,7 +37,7 @@ public class Menu {
 		if (choice == 1) {
 			List<Staff> staffList = relations.listAllStaff();
 			System.out.println(staffList);
-			
+
 		}
 		if (choice == 2) {
 			System.out.println("Choose a Staff type");
@@ -83,7 +83,8 @@ public class Menu {
 
 		}
 		if (choice == 8) {
-			System.out.println("1.Vet 1" + "\n" + "2.Vet 2" + "\n" + "3.Vet 3" + "\n" + "4.Vet 4" + "\n" + "5.Vet 5");
+			System.out.println("1.Dog Vet" + "\n" + "2.Cat Vet" + "\n" + "3.Bird Vet" + "\n" + "4.Hamster Vet" + "\n"
+					+ "5.Rabbit Vet");
 			int userChoice = input.nextInt();
 			Queue<Animal> queued = relations.animalsAssignedToStaff(userChoice);
 			System.out.println(queued);
@@ -96,14 +97,13 @@ public class Menu {
 		}
 		if (choice == 11) {
 			System.out.println("Bye!");
-	        return;
+			return;
 		}
 		readingUser();
 	}
-  
+
 	public boolean validOption(int option) {
 		return option >= 0 && option <= 10;
 	}
-	
 
 }

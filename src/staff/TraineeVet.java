@@ -8,7 +8,8 @@ public class TraineeVet extends MedicalStaff {
 	// not use the inherited 'medicalLicence'
 	// because a trainee does not yet have one
 
-	public TraineeVet() {};
+	public TraineeVet() {
+	};
 
 	public TraineeVet(String name, int staffID, String contactNum, int salary, String university) {
 		this.name = name;
@@ -29,12 +30,9 @@ public class TraineeVet extends MedicalStaff {
 
 	@Override
 	public String toString() {
-		return "Trainee Vet: "+ name + "\n" 
-		           + "Staff ID: " + staffID  + "\n"
-					+ "Contact Number: " + contactNum + "\n"
-					+ "Salary: " + salary + "\n"
-					+ "Medical Licence: " + medicalLicence +"\n"
-							+ "University: "+ university + "\n"+"\n";
+		return "Trainee Vet: " + name + "\n" + "Staff ID: " + staffID + "\n" + "Contact Number: " + contactNum + "\n"
+				+ "Salary: " + salary + "\n" + "Medical Licence: " + medicalLicence + "\n" + "University: " + university
+				+ "\n" + "\n";
 	}
 
 }
