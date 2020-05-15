@@ -50,6 +50,7 @@ public class Menu {
 		if (choice == 1) {
 			List<Staff> staffList = relations.listAllStaff();
 			System.out.println(staffList);
+			readingUser();
 		}
 		if (choice == 2) {
 			System.out.println("Choose a Staff type");

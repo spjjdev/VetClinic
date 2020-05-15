@@ -7,10 +7,10 @@ public class SBS19010VetClinic {
 		
 		new Menu();
 		
-		//not calling display method
+
 		
 //		Relations rel = new Relations();
-		
+//		System.out.println(rel.vetQ);
 //		rel.searchStaffByName("Laura",nurses);
 		
 //		rel.listAnimalByType();

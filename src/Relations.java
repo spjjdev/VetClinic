@@ -31,6 +31,11 @@ public class Relations {
 	ArrayList<Vet> vets;
 	ArrayList<TraineeVet> traineeVets;
 	ArrayList<Nurse> nurses;
+	Queue<Animal> dogsQ;
+	Queue<Animal> catsQ;
+	Queue<Animal> birdsQ;
+	Queue<Animal> hamstersQ;
+	Queue<Animal> rabbitsQ;
 	Map<Vet, Queue<Animal>> vetQ;
 
 	public Relations() {
@@ -44,34 +49,12 @@ public class Relations {
 		vets = data.buildVet();
 		traineeVets = data.buildTraineeVet();
 		nurses = data.buildNurse();
-
-		Queue<Animal> dogsQ = new LinkedList<Animal>();
-		for (Animal d : dogs) {
-			dogsQ.add(d);
-		}
-		Queue<Animal> catsQ = new LinkedList<Animal>();
-		for (Animal c : cats) {
-			catsQ.add(c);
-		}
-		Queue<Animal> birdsQ = new LinkedList<Animal>();
-		for (Animal b : birds) {
-			birdsQ.add(b);
-		}
-		Queue<Animal> rabbitsQ = new LinkedList<Animal>();
-		for (Animal r : rabbits) {
-			rabbitsQ.add(r);
-		}
-		Queue<Animal> hamstersQ = new LinkedList<Animal>();
-		for (Animal h : hamsters) {
-			hamstersQ.add(h);
-		}
-
-		Map<Vet, Queue<Animal>> vetQ = new HashMap<Vet, Queue<Animal>>();
-		vetQ.put(vets.get(0), dogsQ);
-		vetQ.put(vets.get(1), catsQ);
-		vetQ.put(vets.get(2), birdsQ);
-		vetQ.put(vets.get(3), hamstersQ);
-		vetQ.put(vets.get(4), rabbitsQ);
+		dogsQ = queueDog();
+		catsQ = queueCat();
+		birdsQ = queueBird();
+		hamstersQ = queueHamster();
+		rabbitsQ = queueRabbit();
+		vetQ = buildMap();
 	}
 
 	public ArrayList<Staff> listAllStaff() {
@@ -150,7 +133,7 @@ public class Relations {
 				}
 			}
 			for (int i = 0; i < ITteam.size(); i++) {
-				if (ITteam.get(i).getTask().contains("Making Phone Calls")){
+				if (ITteam.get(i).getTask().contains("Making Phone Calls")) {
 					tasking.add(ITteam.get(i));
 				}
 			}
@@ -162,7 +145,7 @@ public class Relations {
 				}
 			}
 			for (int i = 0; i < ITteam.size(); i++) {
-				if (ITteam.get(i).getTask().contains("Updating Patient Database")){
+				if (ITteam.get(i).getTask().contains("Updating Patient Database")) {
 					tasking.add(ITteam.get(i));
 				}
 			}
@@ -174,7 +157,7 @@ public class Relations {
 				}
 			}
 			for (int i = 0; i < ITteam.size(); i++) {
-				if (ITteam.get(i).getTask().contains("Patient Follow-up")){
+				if (ITteam.get(i).getTask().contains("Patient Follow-up")) {
 					tasking.add(ITteam.get(i));
 				}
 			}
@@ -186,7 +169,7 @@ public class Relations {
 				}
 			}
 			for (int i = 0; i < ITteam.size(); i++) {
-				if (ITteam.get(i).getTask().contains("Scheduling Appointments")){
+				if (ITteam.get(i).getTask().contains("Scheduling Appointments")) {
 					tasking.add(ITteam.get(i));
 				}
 			}
@@ -301,11 +284,62 @@ public class Relations {
 	}
 
 	public void waitingListOfAnimalsPerStaff() {
-		// what is the difference in this and the one before
+
 	}
 
 	public void passToNextPet() {
 		// this uses the dequeue method of a queue?
+	}
+
+	public Queue<Animal> queueDog() {
+		Queue<Animal> dogQ = new LinkedList<Animal>();
+		for (Dog d : dogs) {
+			dogQ.add(d);
+		}
+		return dogQ;
+	}
+
+	public Queue<Animal> queueCat() {
+		Queue<Animal> catQ = new LinkedList<Animal>();
+		for (Cat c : cats) {
+			catQ.add(c);
+		}
+		return catQ;
+	}
+
+	public Queue<Animal> queueBird() {
+		Queue<Animal> birdQ = new LinkedList<Animal>();
+		for (Bird b : birds) {
+			birdQ.add(b);
+		}
+		return birdQ;
+	}
+
+	public Queue<Animal> queueRabbit() {
+		Queue<Animal> rabbitQ = new LinkedList<Animal>();
+		for (Rabbit r : rabbits) {
+			rabbitQ.add(r);
+		}
+		return rabbitQ;
+	}
+
+	public Queue<Animal> queueHamster() {
+		Queue<Animal> hamsterQ = new LinkedList<Animal>();
+		for (Hamster h : hamsters) {
+			hamsterQ.add(h);
+		}
+		return hamsterQ;
+	}
+
+	public Map<Vet, Queue<Animal>> buildMap() {
+		Map<Vet, Queue<Animal>> vetMap = new HashMap<Vet, Queue<Animal>>();
+		vetMap.put(vets.get(0), dogsQ);
+		vetMap.put(vets.get(1), catsQ);
+		vetMap.put(vets.get(2), birdsQ);
+		vetMap.put(vets.get(3), hamstersQ);
+		vetMap.put(vets.get(4), rabbitsQ);
+		return vetMap;
+
 	}
 
 }
