@@ -4,9 +4,6 @@ public abstract class AdminStaff extends Staff {
 
 	protected int contractHrs;
 	protected String dept;
-	
-
-	
 
 	public int getContractHrs() {
 		return contractHrs;

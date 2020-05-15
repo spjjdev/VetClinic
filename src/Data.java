@@ -43,9 +43,9 @@ public class Data {
 			"Respiratory Infection" };
 	String[] rabbitAilment = { "Ivy poisoning", "Head tilt", "Loss of appetite", "Myxomatosis", "RVHD2",
 			"Ear Infection" };
-	String[] tasks = {"Filing","Updating Patient Database","Patient Follow-up","Scheduling Appointments"};
-	String[] university = {"TCD","NUIG","UCD","Queens"};
-	
+	String[] tasks = { "Filing", "Updating Patient Database", "Patient Follow-up", "Scheduling Appointments" };
+	String[] university = { "TCD", "NUIG", "UCD", "Queens" };
+
 	int[] animalAge = { 1, 2, 3, 4, 5, 6, 7, 8 };
 	String[] phoneNum = { "0980980981", "0192384211", "5746329821", "0192893843", "0192384211", "5746329821",
 			"0192893843", "0918394039", "0909098787", "0980980981", "0192384211", "5746329821", "0192893843",
@@ -65,7 +65,7 @@ public class Data {
 			dogs.get(i).setAilment(dogAilment[rG.nextInt(dogAilment.length)]);
 			dogs.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
 			dogs.get(i).setBreed(dogBreed[rG.nextInt(dogBreed.length)]);
-			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
+			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return dogs;
@@ -80,7 +80,7 @@ public class Data {
 			cats.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			cats.get(i).setAilment(catAilment[rG.nextInt(catAilment.length)]);
 			cats.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
-			cats.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
+			cats.get(i).setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return cats;
@@ -94,7 +94,8 @@ public class Data {
 			rabbits.get(i).setAge(animalAge[rG.nextInt(animalAge.length)]);
 			rabbits.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			rabbits.get(i).setAilment(rabbitAilment[rG.nextInt(rabbitAilment.length)]);
-			rabbits.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
+			rabbits.get(i)
+					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return rabbits;
@@ -108,7 +109,8 @@ public class Data {
 			hamsters.get(i).setAge(animalAge[rG.nextInt(animalAge.length)]);
 			hamsters.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			hamsters.get(i).setAilment(hamsterAilment[rG.nextInt(hamsterAilment.length)]);
-			hamsters.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
+			hamsters.get(i)
+					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return hamsters;
@@ -123,7 +125,8 @@ public class Data {
 			birds.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			birds.get(i).setAilment(birdAilment[rG.nextInt(birdAilment.length)]);
 			birds.get(i).setBirdType(birdtype[rG.nextInt(birdtype.length)]);
-			birds.get(i).setOwner(firstName[rG.nextInt(firstName.length)]+ " " + lastName[rG.nextInt(lastName.length)]);
+			birds.get(i)
+					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
 
 		}
 		return birds;

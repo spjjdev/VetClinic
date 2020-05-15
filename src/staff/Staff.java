@@ -29,7 +29,6 @@ public abstract class Staff {
 		return staffID;
 	}
 
-
 	public String getContactNum() {
 		return contactNum;
 	}
@@ -49,16 +48,11 @@ public abstract class Staff {
 	// I have generated a to string method here as well as the sub classes because
 	// it might be useful to get a list
 	// of staff regardless of role
-	@Override
+
 	public String toString() {
-		return "Staff, Name: "+ name + "\n" 
-		           + "Staff ID: " + staffID  + "\n"
-					+ "Contact Number: " + contactNum + "\n"
-					+ "Task: " + task + "\n"
-					+ "Salary: " + salary + "\n"+"\n";	
-				
-				
-				
+		return "Staff, Name: " + name + "\n" + "Staff ID: " + staffID + "\n" + "Contact Number: " + contactNum + "\n"
+				+ "Task: " + task + "\n" + "Salary: " + salary + "\n" + "\n";
+
 	}
 
 }
