@@ -14,29 +14,16 @@ public class Menu {
 	String[] menuItems = { "List all Staff", "List staff by category", "List all Admin staff performing a certain task",
 			"Search for staff member by name", "List all animals", "List animals by type", "Search animal by name",
 			"List animals assigned to member of medical staff", "List waiting list for medical staff member",
-			"Pass to the next pet" };
+			"Pass to the next pet" ,"Exit Vet Clinic"};
 
 	public Menu() {
-		 displayOptions();
+	
 		readingUser();
-//		int option = -1;
-//		do {
-//			    do {
-//			   displayOptions();
-//			    option = readingUser();
-//			    
-//			}while (!vaildOption(option));
-//			    
-//			    if(option !=0) {}
-//			  
-//		
-//			
-//			
-//		} while (option != 0);
+
 	}
 
 	public void displayOptions() {
-		System.out.println("Select from the following");
+		System.out.println("Select from the following:");
 		for (int i = 0; i < menuItems.length; i++) {
 			System.out.println("Press " + (i + 1) + " to " + menuItems[i]);
 		}
@@ -44,13 +31,13 @@ public class Menu {
 
 	public void readingUser() {
 
-//		displayOptions();
+		displayOptions();
 		int choice = input.nextInt();
 
 		if (choice == 1) {
 			List<Staff> staffList = relations.listAllStaff();
 			System.out.println(staffList);
-			readingUser();
+			
 		}
 		if (choice == 2) {
 			System.out.println("Choose a Staff type");
@@ -107,7 +94,11 @@ public class Menu {
 		if (choice == 10) {
 			relations.passToNextPet();
 		}
-
+		if (choice == 11) {
+			System.out.println("Bye!");
+	        return;
+		}
+		readingUser();
 	}
   
 	public boolean validOption(int option) {
