@@ -38,6 +38,8 @@ public class Relations {
 	Queue<Animal> rabbitsQ;
 	Map<Vet, Queue<Animal>> vetQ;
 
+	// In the constructor I have populated the ArrayLists, Queues and Map above with
+	// data using appropriate methods.
 	public Relations() {
 		dogs = data.buildDog();
 		cats = data.buildCat();
@@ -57,6 +59,9 @@ public class Relations {
 		vetQ = buildMap();
 	}
 
+	// This method puts the ArrayLists of different types of staff into one
+	// ArrayList of all staff by iterating through each one and adding to
+	// 'staffList'.
 	public ArrayList<Staff> listAllStaff() {
 		ArrayList<Staff> staffList = new ArrayList<Staff>();
 		for (Staff s : ITteam) {
@@ -77,10 +82,11 @@ public class Relations {
 		return staffList;
 	}
 
+	// This method takes a user choice and displays the corresponding ArrayList of
+	// staff by iterating through that ArrayList and putting them in the 'toReturn'
+	// ArrayList.
 	public ArrayList<Staff> listStaffByCategory(int userChoice) {
-
 		ArrayList<Staff> toReturn = new ArrayList<Staff>();
-
 		switch (userChoice) {
 		case 1:
 			for (Staff s : vets) {
@@ -111,6 +117,10 @@ public class Relations {
 		return toReturn;
 	}
 
+	// This method returns an ArrayList of Admin staff (ITstaff and receptionists)
+	// that are working on a task by iterating through those ArrayLists and
+	// searching
+	// for an attribute that matches the users choice.
 	public ArrayList<Staff> staffWorkingOnTask(int taskChoice) {
 		ArrayList<Staff> tasking = new ArrayList<Staff>();
 		switch (taskChoice) {
@@ -176,13 +186,14 @@ public class Relations {
 			break;
 		}
 		return tasking;
-
 	}
 
+	// This method returns a staff object whose name attribute matches the users
+	// input. it uses the listAllStaff method to get the ArrayList of staff and
+	// iterates over it with a linear search for a matching name.
 	public ArrayList<Staff> searchStaffByName(String name) {
 		ArrayList<Staff> staff = listAllStaff();
 		ArrayList<Staff> toReturn = new ArrayList<Staff>();
-		// arraylist of staff with same name
 		for (int i = 0; i < staff.size(); i++) {
 			if (staff.get(i).getName().contains(name)) {
 				toReturn.add(staff.get(i));
@@ -191,6 +202,8 @@ public class Relations {
 		return toReturn;
 	}
 
+	// This method iterates through the separate animal ArrayLists and puts them in
+	// one 'animalList' ArrayList
 	public ArrayList<Animal> listAllAnimals() {
 		ArrayList<Animal> animalList = new ArrayList<Animal>();
 		for (Animal a : dogs) {
@@ -211,6 +224,7 @@ public class Relations {
 		return animalList;
 	}
 
+	// This retrieves the animal ArrayList that corresponds to the users choice.
 	public ArrayList<Animal> listAnimalByType(int userChoice) {
 		ArrayList<Animal> toReturn = new ArrayList<Animal>();
 
@@ -249,6 +263,8 @@ public class Relations {
 		return toReturn;
 	}
 
+	// This method uses linear search to find an animal with a name attribute that
+	// matches the users input.
 	public ArrayList<Animal> searchAnimalByName(String name) {
 		ArrayList<Animal> animals = listAllAnimals();
 		ArrayList<Animal> toReturn = new ArrayList<Animal>();
@@ -261,6 +277,8 @@ public class Relations {
 		return toReturn;
 	}
 
+	// This method uses the Map Collection to retrieve a Queue of animals that a
+	// particular vet will look after
 	public Queue<Animal> animalsAssignedToStaff(int userChoice) {
 
 		switch (userChoice) {
@@ -283,14 +301,43 @@ public class Relations {
 
 	}
 
-	public void waitingListOfAnimalsPerStaff() {
+	// This method uses the Map Collection to retrieve a value of a queue of animals
+	// by using the vet key
+	public Queue<Animal> waitingListOfAnimalsPerStaff(int userChoice) {
+		switch (userChoice) {
+		case 1:
+			return vetQ.get(vets.get(0));
+
+		case 2:
+			return vetQ.get(vets.get(1));
+
+		case 3:
+			return vetQ.get(vets.get(2));
+
+		case 4:
+			return vetQ.get(vets.get(3));
+
+		case 5:
+			return vetQ.get(vets.get(4));
+		}
+		return null;
 
 	}
 
-	public void passToNextPet() {
-		// this uses the dequeue method of a queue?
+	// This method gets a queue of animals based on the user choice and then gives
+	// the option to dequeue from that queue
+	public Queue<Animal> passToNextPet(int userChoice, int choice) {
+		Queue<Animal> queue = waitingListOfAnimalsPerStaff(userChoice);
+		if (choice == 1) {
+			queue.remove();
+			System.out.println(queue);
+		} else if (choice == 2) {
+			System.out.println("Back to Menu");
+		}
+		return queue;
 	}
 
+	// This method populates a queue of dogs by iterating over the ArrayList of dogs
 	public Queue<Animal> queueDog() {
 		Queue<Animal> dogQ = new LinkedList<Animal>();
 		for (Dog d : dogs) {
@@ -299,6 +346,7 @@ public class Relations {
 		return dogQ;
 	}
 
+	// This method populates a queue of cats by iterating over the ArrayList of cats
 	public Queue<Animal> queueCat() {
 		Queue<Animal> catQ = new LinkedList<Animal>();
 		for (Cat c : cats) {
@@ -307,6 +355,8 @@ public class Relations {
 		return catQ;
 	}
 
+	// This method populates a queue of birds by iterating over the ArrayList of
+	// birds
 	public Queue<Animal> queueBird() {
 		Queue<Animal> birdQ = new LinkedList<Animal>();
 		for (Bird b : birds) {
@@ -315,6 +365,8 @@ public class Relations {
 		return birdQ;
 	}
 
+	// This method populates a queue of rabbits by iterating over the ArrayList of
+	// rabbits
 	public Queue<Animal> queueRabbit() {
 		Queue<Animal> rabbitQ = new LinkedList<Animal>();
 		for (Rabbit r : rabbits) {
@@ -323,6 +375,8 @@ public class Relations {
 		return rabbitQ;
 	}
 
+	// This method populates a queue of hamsters by iterating over the ArrayList of
+	// hamsters
 	public Queue<Animal> queueHamster() {
 		Queue<Animal> hamsterQ = new LinkedList<Animal>();
 		for (Hamster h : hamsters) {
@@ -331,6 +385,7 @@ public class Relations {
 		return hamsterQ;
 	}
 
+	// Thid method populates a Map with vets and queues of animals
 	public Map<Vet, Queue<Animal>> buildMap() {
 		Map<Vet, Queue<Animal>> vetMap = new HashMap<Vet, Queue<Animal>>();
 		vetMap.put(vets.get(0), dogsQ);

@@ -36,14 +36,10 @@ public class Dog extends Animal {
 
 	@Override
 	public String toString() {
-return "Dog, Name: "+ name + "\n"
-	+ "Breed: " + breed + "\n"
-	+ "Age: " + age + "\n"
-	+ "Ailment: " + ailment + "\n"
-	+ "Licence No: " + licenceNum + "\n"
-	+ "Owner: " + owner + "\n"
-	+ "Contact No: " + contactNum + "\n"+ "\n";
-	
+		return "Dog, Name: " + name + "\n" + "Breed: " + breed + "\n" + "Age: " + age + "\n" + "Ailment: " + ailment
+				+ "\n" + "Licence No: " + licenceNum + "\n" + "Owner: " + owner + "\n" + "Contact No: " + contactNum
+				+ "\n" + "\n";
+
 	}
 
 }

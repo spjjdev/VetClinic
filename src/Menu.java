@@ -11,17 +11,17 @@ public class Menu {
 	Relations relations = new Relations();
 	Scanner input = new Scanner(System.in);
 
+	// This is an array of options for the menu.
 	String[] menuItems = { "List all Staff", "List staff by category", "List all Admin staff performing a certain task",
 			"Search for staff member by name", "List all animals", "List animals by type", "Search animal by name",
 			"List animals assigned to member of medical staff", "List waiting list for medical staff member",
 			"Pass to the next pet", "Exit Vet Clinic" };
 
 	public Menu() {
-
 		readingUser();
-
 	}
 
+	// This method iterates over the menuItems array and prints a menu.
 	public void displayOptions() {
 		System.out.println("Welcome to Paw-sible Pet Care" + "\n" + "Select from the following:");
 		for (int i = 0; i < menuItems.length; i++) {
@@ -29,15 +29,14 @@ public class Menu {
 		}
 	}
 
+	//This method uses the methods from the Relations class to display the relative data structures depending on the users choice
 	public void readingUser() {
-
 		displayOptions();
 		int choice = input.nextInt();
 
 		if (choice == 1) {
 			List<Staff> staffList = relations.listAllStaff();
 			System.out.println(staffList);
-
 		}
 		if (choice == 2) {
 			System.out.println("Choose a Staff type");
@@ -60,7 +59,6 @@ public class Menu {
 			String staffName = input.next();
 			ArrayList<Staff> staffMember = relations.searchStaffByName(staffName);
 			System.out.println(staffMember);
-
 		}
 		if (choice == 5) {
 			List<Animal> animalList = relations.listAllAnimals();
@@ -90,10 +88,19 @@ public class Menu {
 			System.out.println(queued);
 		}
 		if (choice == 9) {
-			relations.waitingListOfAnimalsPerStaff();
+			System.out.println("1.Dog Vet" + "\n" + "2.Cat Vet" + "\n" + "3.Bird Vet" + "\n" + "4.Hamster Vet" + "\n"
+					+ "5.Rabbit Vet");
+			int userChoice = input.nextInt();
+			Queue<Animal> queued = relations.waitingListOfAnimalsPerStaff(userChoice);
+			System.out.println(queued);
 		}
 		if (choice == 10) {
-			relations.passToNextPet();
+			System.out.println("1.Dog Queue" + "\n" + "2.Cat Queue" + "\n" + "3.Bird Queue" + "\n" + "4.Hamster Queue" + "\n"
+					+ "5.Rabbit Queue");
+			int queueChoice = input.nextInt();
+			System.out.println("1.Pass to next pet"+"\n"+"2.Return to Menu");
+			int dequeue = input.nextInt();
+			relations.passToNextPet(queueChoice, dequeue);
 		}
 		if (choice == 11) {
 			System.out.println("Bye!");

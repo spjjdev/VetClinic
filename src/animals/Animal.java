@@ -47,7 +47,5 @@ public abstract class Animal {
 	public void setAilment(String ailment) {
 		this.ailment = ailment;
 	}
-	
-	
 
 }

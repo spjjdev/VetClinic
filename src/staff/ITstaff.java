@@ -1,5 +1,6 @@
 package staff;
 
+//AdminStaff extends Staff
 public class ITstaff extends AdminStaff {
 
 	public ITstaff() {

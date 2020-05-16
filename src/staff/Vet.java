@@ -1,5 +1,6 @@
 package staff;
 
+//MedicalStaff extends Staff
 public class Vet extends MedicalStaff {
 
 	public Vet() {

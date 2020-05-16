@@ -15,6 +15,8 @@ public class Data {
 
 	Random rG = new Random();
 
+	// These are arrays of data to assign to attributes of the animals and staff
+	// instances
 	String[] firstName = { "Peter", "Mark", "Matthew", "Luke", "John", "James", "Stephen", "Michael", "Laura",
 			"Michelle", "Rose", "Mary", "Cathy", "Ursula", "Sarah", "Rachel" };
 	String[] lastName = { "Smith", "Jones", "Ryan", "Byrne", "Roberts", "Hanks", "DeNiro", "Peters", "Jackson",
@@ -45,18 +47,17 @@ public class Data {
 			"Ear Infection" };
 	String[] tasks = { "Filing", "Updating Patient Database", "Patient Follow-up", "Scheduling Appointments" };
 	String[] university = { "TCD", "NUIG", "UCD", "Queens" };
-
-	int[] animalAge = { 1, 2, 3, 4, 5, 6, 7, 8 };
 	String[] phoneNum = { "0980980981", "0192384211", "5746329821", "0192893843", "0192384211", "5746329821",
 			"0192893843", "0918394039", "0909098787", "0980980981", "0192384211", "5746329821", "0192893843",
 			"0918394039", "0909098787" };
-	String[] dogLicence = { "0980980981", "0192384211", "5746329821", "0192893843", "0192384211", "5746329821",
-			"0192893843", "0918394039", "0909098787", "0980980981", "0192384211", "5746329821", "0192893843",
-			"0918394039", "0909098787" };
+	String[] dogLicence = { "E63-5647", "D79-5648", "D58-0987", "A12-6048", "F45-2344", "G45-8364", "J09-6543",
+			"D14-3113", "R42-1334", "F65-6768", "F66-4353", "D13-2323", "G56-7878", "G55-9764", "W23-4456" };
+	int[] animalAge = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
+	// This method builds instances of the Dog Class
 	public ArrayList<Dog> buildDog() {
 		ArrayList<Dog> dogs = new ArrayList<Dog>();
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 3; i++) {
 			dogs.add(new Dog());
 			dogs.get(i).setName(dogName[rG.nextInt(dogName.length)]);
 			dogs.get(i).setAge(animalAge[rG.nextInt(animalAge.length)]);
@@ -66,11 +67,11 @@ public class Data {
 			dogs.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
 			dogs.get(i).setBreed(dogBreed[rG.nextInt(dogBreed.length)]);
 			dogs.get(i).setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-
 		}
 		return dogs;
 	}
 
+	// This method builds instances of the Cat Class
 	public ArrayList<Cat> buildCat() {
 		ArrayList<Cat> cats = new ArrayList<Cat>();
 		for (int i = 0; i < 200; i++) {
@@ -81,11 +82,11 @@ public class Data {
 			cats.get(i).setAilment(catAilment[rG.nextInt(catAilment.length)]);
 			cats.get(i).setLicenceNum(dogLicence[rG.nextInt(dogLicence.length)]);
 			cats.get(i).setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-
 		}
 		return cats;
 	}
 
+	// This method builds instances of the Rabbit Class
 	public ArrayList<Rabbit> buildRabbit() {
 		ArrayList<Rabbit> rabbits = new ArrayList<Rabbit>();
 		for (int i = 0; i < 200; i++) {
@@ -96,11 +97,11 @@ public class Data {
 			rabbits.get(i).setAilment(rabbitAilment[rG.nextInt(rabbitAilment.length)]);
 			rabbits.get(i)
 					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-
 		}
 		return rabbits;
 	}
 
+	// This method builds instances of the Hamster Class
 	public ArrayList<Hamster> buildHamster() {
 		ArrayList<Hamster> hamsters = new ArrayList<Hamster>();
 		for (int i = 0; i < 200; i++) {
@@ -111,11 +112,11 @@ public class Data {
 			hamsters.get(i).setAilment(hamsterAilment[rG.nextInt(hamsterAilment.length)]);
 			hamsters.get(i)
 					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-
 		}
 		return hamsters;
 	}
 
+	// This method builds instances of the Bird Class
 	public ArrayList<Bird> buildBird() {
 		ArrayList<Bird> birds = new ArrayList<Bird>();
 		for (int i = 0; i < 200; i++) {
@@ -127,17 +128,16 @@ public class Data {
 			birds.get(i).setBirdType(birdtype[rG.nextInt(birdtype.length)]);
 			birds.get(i)
 					.setOwner(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-
 		}
 		return birds;
 	}
 
+	// This method builds instances of the ITstaff Class
 	public ArrayList<ITstaff> buildITstaff() {
 		ArrayList<ITstaff> ITteam = new ArrayList<ITstaff>();
 		for (int i = 0; i < 5; i++) {
 			ITstaff s = new ITstaff();
 			s.setName(firstName[rG.nextInt(firstName.length)] + " " + lastName[rG.nextInt(lastName.length)]);
-//			s.setName(ITteam.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			s.setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			s.setSalary(40000);
 			s.setContractHrs(30);
@@ -145,14 +145,14 @@ public class Data {
 			s.getStaffID();
 			s.setTask(tasks[rG.nextInt(tasks.length)]);
 			ITteam.add(s);
-
 		}
 		return ITteam;
 	}
 
+	// This method builds instances of the Receptionist Class
 	public ArrayList<Receptionist> buildReceptionist() {
 		ArrayList<Receptionist> receptionists = new ArrayList<Receptionist>();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 200; i++) {
 			receptionists.add(new Receptionist());
 			receptionists.get(i).setName(firstName[rG.nextInt(firstName.length)]);
 			receptionists.get(i).setName(receptionists.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
@@ -162,11 +162,11 @@ public class Data {
 			receptionists.get(i).setDept("Administration");
 			receptionists.get(i).getStaffID();
 			receptionists.get(i).setTask(tasks[rG.nextInt(tasks.length)]);
-
 		}
 		return receptionists;
 	}
 
+	// This method builds instances of the Vet Class
 	public ArrayList<Vet> buildVet() {
 		ArrayList<Vet> vets = new ArrayList<Vet>();
 		for (int i = 0; i < 5; i++) {
@@ -175,13 +175,13 @@ public class Data {
 			vets.get(i).setName(vets.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			vets.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			vets.get(i).setSalary(70000);
-			vets.get(i).getMedicalLicence();// need a unique medical licence number the same as staff id
+			vets.get(i).getMedicalLicence();
 			vets.get(i).getStaffID();
-
 		}
 		return vets;
 	}
 
+	// This method builds instances of the TraineeVet Class
 	public ArrayList<TraineeVet> buildTraineeVet() {
 		ArrayList<TraineeVet> traineeVets = new ArrayList<TraineeVet>();
 		for (int i = 0; i < 10; i++) {
@@ -193,11 +193,11 @@ public class Data {
 			traineeVets.get(i).setUniversity(university[rG.nextInt(university.length)]);
 			traineeVets.get(i).setMedicalLicence("N/A");
 			traineeVets.get(i).getStaffID();
-
 		}
 		return traineeVets;
 	}
 
+	// This method builds instances of the Nurse Class
 	public ArrayList<Nurse> buildNurse() {
 		ArrayList<Nurse> nurses = new ArrayList<Nurse>();
 		for (int i = 0; i < 15; i++) {
@@ -206,9 +206,8 @@ public class Data {
 			nurses.get(i).setName(nurses.get(i).getName() + " " + lastName[rG.nextInt(lastName.length)]);
 			nurses.get(i).setContactNum(phoneNum[rG.nextInt(phoneNum.length)]);
 			nurses.get(i).setSalary(40000);
-			nurses.get(i).getMedicalLicence();// need a unique medical licence number the same as staff id
+			nurses.get(i).getMedicalLicence();
 			nurses.get(i).getStaffID();
-
 		}
 		return nurses;
 	}

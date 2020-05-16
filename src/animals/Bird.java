@@ -2,7 +2,6 @@ package animals;
 
 public class Bird extends Animal {
 
-	// when i tried to add a variable 'birdType' i get an error
 	private String birdType;
 
 	public Bird() {
@@ -15,7 +14,6 @@ public class Bird extends Animal {
 		this.contactNum = contactNum;
 		this.ailment = ailment;
 		this.birdType = birdType;
-
 	}
 
 	public String getBirdType() {
@@ -28,12 +26,8 @@ public class Bird extends Animal {
 
 	@Override
 	public String toString() {
-		return "Bird, Name: "+ name + "\n"
-				+ "Age: " + age + "\n"
-				+ "Species: " + birdType + "\n"
-				+ "Ailment: " + ailment + "\n"
-				+ "Owner: " + owner + "\n"
-				+ "Contact No: " + contactNum + "\n"+ "\n";
-				
+		return "Bird, Name: " + name + "\n" + "Age: " + age + "\n" + "Species: " + birdType + "\n" + "Ailment: "
+				+ ailment + "\n" + "Owner: " + owner + "\n" + "Contact No: " + contactNum + "\n" + "\n";
+
 	}
 }

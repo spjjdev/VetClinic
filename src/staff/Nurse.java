@@ -1,9 +1,11 @@
 package staff;
 
+//MedicalStaff extends Staff
 public class Nurse extends MedicalStaff {
-	
-	public Nurse () {};
-	
+
+	public Nurse() {
+	};
+
 	public Nurse(String name, int staffID, String contactNum, int salary, String medicalLicence) {
 		this.name = name;
 		this.staffID = counter;
@@ -15,14 +17,8 @@ public class Nurse extends MedicalStaff {
 
 	@Override
 	public String toString() {
-		return "Nurse: "+ name + "\n" 
-		           + "Staff ID: " + staffID  + "\n"
-					+ "Contact Number: " + contactNum + "\n"
-					+ "Salary: " + salary + "\n"
-					+ "Medical Licence: " + medicalLicence + "\n"+"\n";
+		return "Nurse: " + name + "\n" + "Staff ID: " + staffID + "\n" + "Contact Number: " + contactNum + "\n"
+				+ "Salary: " + salary + "\n" + "Medical Licence: " + medicalLicence + "\n" + "\n";
 	}
 
-	
-	
-	
 }

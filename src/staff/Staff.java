@@ -1,5 +1,6 @@
 package staff;
 
+//This class is the main abstraction of all staff members, with sub abstractions of MedicalStaff and AdminStaff
 public abstract class Staff {
 
 	protected String name;

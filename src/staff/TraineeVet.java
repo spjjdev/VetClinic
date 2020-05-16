@@ -1,12 +1,15 @@
 package staff;
 
+//MedicalStaff extends Staff
 public class TraineeVet extends MedicalStaff {
 
 	private String university;
 
-	// this constructor uses the TraineeVet specific variable 'university' and does
-	// not use the inherited 'medicalLicence'
-	// because a trainee does not yet have one
+	/*
+	 * This constructor uses the TraineeVet specific variable 'university' and does
+	 * not use the inherited 'medicalLicence' because a trainee does not yet have
+	 * one
+	 */
 
 	public TraineeVet() {
 	};
